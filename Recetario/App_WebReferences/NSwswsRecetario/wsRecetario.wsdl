@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://miPrimerWebService.aweb.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://miPrimerWebService.aweb.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://miPrimerWebService.aweb.com/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerRecetas">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerRecetasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerRecetasResult" type="tns:ArrayOfEntReceta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEntReceta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntReceta" nillable="true" type="tns:EntReceta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntReceta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ingredientes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="tns:EntTipo" />
+          <s:element minOccurs="1" maxOccurs="1" name="DificultadId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dificultad" type="tns:EntDificultad" />
+          <s:element minOccurs="1" maxOccurs="1" name="Porciones" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tiempo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fotografia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Video" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaAlta" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntTipo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntDificultad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerRecetaID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerRecetaIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerRecetaIDResult" type="tns:EntReceta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecetasSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerRecetas" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecetasSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerRecetasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecetaIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerRecetaID" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecetaIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerRecetaIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsRecetarioSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecetas">
+      <wsdl:input message="tns:ObtenerRecetasSoapIn" />
+      <wsdl:output message="tns:ObtenerRecetasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecetaID">
+      <wsdl:input message="tns:ObtenerRecetaIDSoapIn" />
+      <wsdl:output message="tns:ObtenerRecetaIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsRecetarioSoap" type="tns:wsRecetarioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://miPrimerWebService.aweb.com/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecetas">
+      <soap:operation soapAction="http://miPrimerWebService.aweb.com/ObtenerRecetas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecetaID">
+      <soap:operation soapAction="http://miPrimerWebService.aweb.com/ObtenerRecetaID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsRecetarioSoap12" type="tns:wsRecetarioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://miPrimerWebService.aweb.com/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecetas">
+      <soap12:operation soapAction="http://miPrimerWebService.aweb.com/ObtenerRecetas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecetaID">
+      <soap12:operation soapAction="http://miPrimerWebService.aweb.com/ObtenerRecetaID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsRecetario">
+    <wsdl:port name="wsRecetarioSoap" binding="tns:wsRecetarioSoap">
+      <soap:address location="http://localhost:1193/wsRecetario.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsRecetarioSoap12" binding="tns:wsRecetarioSoap12">
+      <soap12:address location="http://localhost:1193/wsRecetario.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
