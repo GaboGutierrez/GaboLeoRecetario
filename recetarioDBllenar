@@ -1,0 +1,134 @@
+INSERT [TIPO] ([TIPO_ID], [TIPO_NOMB]) VALUES (1, N'Ensalada')
+GO
+INSERT [TIPO] ([TIPO_ID], [TIPO_NOMB]) VALUES (2, N'Entrada')
+GO
+INSERT [TIPO] ([TIPO_ID], [TIPO_NOMB]) VALUES (3, N'Sopa')
+GO
+INSERT [TIPO] ([TIPO_ID], [TIPO_NOMB]) VALUES (4, N'Carnes')
+GO
+INSERT [TIPO] ([TIPO_ID], [TIPO_NOMB]) VALUES (5, N'Aves')
+GO
+INSERT [TIPO] ([TIPO_ID], [TIPO_NOMB]) VALUES (6, N'Pescados y mariscos')
+GO
+INSERT [TIPO] ([TIPO_ID], [TIPO_NOMB]) VALUES (7, N'Postres')
+GO
+INSERT [DIFICULTAD] ([DIFI_ID], [DIFI_NOMB]) VALUES (1, N'Fácil')
+GO
+INSERT [DIFICULTAD] ([DIFI_ID], [DIFI_NOMB]) VALUES (2, N'Medio')
+GO
+INSERT [DIFICULTAD] ([DIFI_ID], [DIFI_NOMB]) VALUES (3, N'Difícil')
+GO
+INSERT [DIFICULTAD] ([DIFI_ID], [DIFI_NOMB]) VALUES (4, N'Chef')
+GO
+INSERT [RECETA] ([RECE_ID], [RECE_NOMB], [RECE_INGR], [RECE_DESC], [RECE_TIPO_ID], [RECE_DIFI_ID], [RECE_PORC], [RECE_TIEM], [RECE_FOTO], [RECE_VIDE], [RECE_FECH_ALTA]) VALUES (1, N'Jalapeños con jamón queso crema y tocino', N'Chiles Jalapeños lavados y desvenados, (cortar la parte de arriba).Queso Philadelphia.Jamón cortado en pequeños trocitos se mezclan junto con el queso philadelphia.Tocino para enrollar por fuera.Palillos para sostener el tocino.', N'Una vez lavados y desvenados los chiles, se rellenan con el queso y el jamón, luego volver a colocar la tapita que cortamos para finalmente cubrirlos con el tocino el cual sostendremos con los palillos. Después poner en la parrilla o asador, OJO a fuego lento de preferencia donde no le dé el calor directo porque el tocino escurrirá la grasa y puede levantar flama y quemar tus chilitos, voltear constantemente hasta ver un colorcito doradito y a disfrutar con tu carnita asada o comida favorita.', 1, 1, 3, 30, N'/img/JALAPENIOS.jpg', N'https://www.youtube.com/embed/uUDE5xE4cUM', CAST(0x0000A5C000000000 AS DateTime))
+GO
+INSERT [RECETA] ([RECE_ID], [RECE_NOMB], [RECE_INGR], [RECE_DESC], [RECE_TIPO_ID], [RECE_DIFI_ID], [RECE_PORC], [RECE_TIEM], [RECE_FOTO], [RECE_VIDE], [RECE_FECH_ALTA]) VALUES (2, N'Entomatadas de huevo', N'4 jitomates1/4 de cebolla1 diente de ajoSal y pimienta1 cucharadita de crema2 huevosCremaQueso panela rallado', N'Hervir los jitomates junto con la cebolla y el ajo. Una vez cocidos, ponerlos en la licuadora con una cucharada de crema y una pizca de consomé de pollo en polvo y pimienta. En un sartén con aceite de oliva  se vierte la salsa y se calienta. Mientras tanto, en otro sartén, freímos tortillas en aceite de olivo.Y en un tercer sartén hacemos un huevo revuelto. Para emplatar se rellena una tortilla con huevo y  la cubrimos con la salsa bien caliente.Decoramos con crema y queso panela rallado y unas rebanadas de aguacate.', 2, 2, 6, 40, N'/img/ENTOMATADAS.jpg', N'https://www.youtube.com/embed/yfzxt-dU2WQ', CAST(0x0000A5C100000000 AS DateTime))
+GO
+INSERT [RECETA] ([RECE_ID], [RECE_NOMB], [RECE_INGR], [RECE_DESC], [RECE_TIPO_ID], [RECE_DIFI_ID], [RECE_PORC], [RECE_TIEM], [RECE_FOTO], [RECE_VIDE], [RECE_FECH_ALTA]) VALUES (3, N'Chocoflan de Fresa', N'1/2 taza de mermelada de fresas, caliente
+1 paquete (2 capas) de harina preparada para pastel (cake) de chocolate
+1 taza de agua
+1/3 taza de aceite
+1/2 taza de crema agria Sour Cream o la de KNUDSEN
+7 huevos, cantidad dividida
+1 lata (12 oz) de leche evaporada
+1 paquete (8 oz) de queso crema Cream Cheese, en cubitos, ablandado
+1/3 taza de azúcar
+1 paquete (3 oz) de gelatina sabor fresa JELL-O Strawberry Flavor Gelatin
+1 taza de cobertura COOL WHIP Whipped Topping descongelada
+1 taza de fresas, cortadas por la mitad
+', N'CALIENTA el horno a 375°F.
+
+VIERTA la mermelada en un molde con tubo central con capacidad para 12 tazas que hayas rociado con aceite en aerosol.
+
+BATE bien la harina para pastel, al agua, el aceite, la crema agria y 3 huevos utilizando la batidora. Vierte este batido sobre la mermelada del molde.
+
+LICÚA la leche evaporada, el queso crema, el azúcar, los huevos restantes y el polvo seco de la gelatina hasta obtener una consistencia homogénea; pon esta preparación sobre el batido del molde. Rocía un pedazo de papel de aluminio con aceite en aerosol y cubre el postre con él con el aceite hacia abajo.
+
+COLOCA el molde con tubo central dentro de un molde poco profundo grande. Agrega suficiente agua al molde más grande para que cubra por lo menos hasta 2 pulgs. de los lados del molde con tubo central del postre.
+
+HORNEA el postre 1 hora 20 min. o hasta que al insertar un palillo de dientes cerca del centro, éste salga limpio. Saca el molde del pastel del molde con agua y ponlo en una rejilla metálica; deja que se termine de enfriar. Refrigéralo 2 horas.
+
+AFLOJA el pastel de los lados del molde utilizando un cuchillo. Vuélcalo sobre un plato; desmóldalo con cuidado. Sírvelo con cobertura COOL WHIP y con fresas por encima.
+', 7, 3, 8, 90, N'/img/FLAN_FRESA_CHOCOLATE.jpg', N'https://www.youtube.com/embed/5YFqKCRqA0A', CAST(0x0000A5C1009450C0 AS DateTime))
+GO
+INSERT [RECETA] ([RECE_ID], [RECE_NOMB], [RECE_INGR], [RECE_DESC], [RECE_TIPO_ID], [RECE_DIFI_ID], [RECE_PORC], [RECE_TIEM], [RECE_FOTO], [RECE_VIDE], [RECE_FECH_ALTA]) VALUES (4, N'prueba', N'esto es una prueba ingredietnes', N'esto es una prueba elaboracion', 2, 2, 5, 15, N'/img/Foto_No_Disponible.jpg', N'https://www.youtube.com/embed/3gxNW2Ulpwk', CAST(0x0000A4FA00000000 AS DateTime))
+GO
+INSERT [RECETA] ([RECE_ID], [RECE_NOMB], [RECE_INGR], [RECE_DESC], [RECE_TIPO_ID], [RECE_DIFI_ID], [RECE_PORC], [RECE_TIEM], [RECE_FOTO], [RECE_VIDE], [RECE_FECH_ALTA]) VALUES (5, N'POLLO A LA NARANAJA ESTILO CHINO', N'4  Pechugas de pollo cortado en trozos grandes
+1 cebolla mediana picada
+ 2 dientes ajo picados
+Ralladura 1 naranja
+1 1/4  taza  – 300 ml zumo naranja
+1/4  taza  – 50ml vino seco blanco
+2 cucharillas vinagre (mejor arroz pero no importa otro)
+1 cucharadita jengibre
+¼ taza  – 50 ml salsa soya
+1 cucharilla pimentón  (optativo:  si quiere picante ¼ cucharilla cayena)
+1 cucharada miel
+2 cucharillas azúcar moreno
+Aceite girasol o similar (preferente para no distraer del sabor de los ingredientes, pero puede usar oliva virgen suave)
+Harina (para enharinar), 1 cucharada maicena,
+½ cucharilla sal  (añadir al final según gustos) y una pizca de pimienta negra.', N'• Cortar las pechugas en trozos grandes
+• Salpimentar, enharinar y freír  hasta que queden dorados y hechos. Retirar los trozos de pollo y poner aparte.
+• Si hay demasiado aceite del frito retirar lo sobrante.  Pochar la cebolla y ajos picados en el mismo aceite del frito.
+• Añadir pollo, miel y azúcar removiendo.
+• Antes que empiece a caramelizar (2 minutos) añadir vino blanco,  jengibre, soja y ralladura de naranja.  Calentar y remueva.  Dejar que evapore un poco el alcohol.
+• Añadir zumo, vinagre, pimentón, un poco de pimienta.  Dejar unos 15 min o hasta que se reduzca salsa.
+• Disolver 1 cucharada de maicena en agua fría y añadir a la salsa.  Calentar removiendo hasta que espese. Probar Sal y pimienta (Depende de gustos puesto que la salsa soja ya añade sal a la receta.  También puede aumentar la salsa de soja en vez de añadir más sal.
+• Servir sobre  cama de arroz blanco o salvaje frito o al vapor.', 5, 3, 8, 60, N'/img/POLLO_NARANJA.jpg', N'https://www.youtube.com/embed/4oTNBk9I1uI', CAST(0x0000A5C500000000 AS DateTime))
+GO
+INSERT [RECETA] ([RECE_ID], [RECE_NOMB], [RECE_INGR], [RECE_DESC], [RECE_TIPO_ID], [RECE_DIFI_ID], [RECE_PORC], [RECE_TIEM], [RECE_FOTO], [RECE_VIDE], [RECE_FECH_ALTA]) VALUES (6, N'Sopa de Ajo', N'Optativo: Freír uno o dos dientes de ajo en laminas hasta que empiecen a dorarse, Añadir pan de barra del di anterior en cubitos y sofreír hasta que queden dorados. Poner en papel de cocina para quitar el exceso de grasa
+• 1/4 a 1/2 barra de pan dependiendo del tamaño del día anterior mejor
+• 6 dientes de ajo en laminas
+• Aceite de oliva – aproximadamente 1/2 vaso
+• 150 gr 5 y 1/2 oz. de jamón serrano en dados si es posible – si no puede usar jamón york en dados
+• 1 cucharada de pimentón dulce
+• 2 litros – 8 tazas caldo de carne – puede hacerlo con 2 cubitos de caldo de carne tipo Knorr y agua
+• 4 huevos
+• Sal al gusto
+• Optativo: 100 gr – 3 y 1/2 oz. chorizo en dados – usar especialmente si usan jamon york y no tienen serrano- O pueden usar el chorizo con el jamón serrano. El clásico es con jamon serrano solo.', N'• Cortar el pan en laminas
+• En una cacerola verter medio vaso de aceite de oliva (si no tienen también pueden usar otro tipo) freír las laminas de los 6 dientes de ajo hasta que empiecen a dorarse.
+• Añadir el jamón ( y chorizo optativo) y remover
+• Añadir y remover el pan hasta que incorpore bien el aceite
+• Añadir el pimentón remover todo para se incorpore –no freír demasiado porque quedara amargo
+• Añadir el caldo de carne y probar para sal – añadir sal se es necesario
+• Escalfar los 4 huevos encima. Tapar para que queden hechos.
+• Servir un huevo cada uno con la sopa.
+• Optativo: Servir con picatostes de ajo ya preparados.', 3, 2, 4, 30, N'/img/SOPA_AJO.jpg', N'https://www.youtube.com/embed/FYMUUzMJF1Q', CAST(0x0000A44500000000 AS DateTime))
+GO
+INSERT [RECETA] ([RECE_ID], [RECE_NOMB], [RECE_INGR], [RECE_DESC], [RECE_TIPO_ID], [RECE_DIFI_ID], [RECE_PORC], [RECE_TIEM], [RECE_FOTO], [RECE_VIDE], [RECE_FECH_ALTA]) VALUES (7, N'CORN DOGS', N'• 150 gr – 1 taza – de harina de maíz amarilla
+• 125 gr – 1 taza – de harina blanca normal + un poco más para enharinar
+• 2 cucharaditas polvo para hornear
+• 2 cucharaditas azúcar
+• 1/4 cucharadita sal
+• Pizca pimienta negra molida (optativo)
+• 240 ml – 1 taza de leche entera
+• 1 huevo grande
+• 8 Salchichas Frankfurt o perritos calientes
+• Aceite abundante tipo girasol etc. no oliva para freír
+• 8 pinchos de bambú', N'Preparación Masa:
+• Mezclar bien en un bol grande las harinas de maíz y normal, polvo de hornear, azúcar, sal, pimienta
+• Batir el huevo con la leche
+• Incorporar la leche y huevo a la mezcla de harinas removiendo con un wisk hasta que quede todo bien incorporado. Dejar aparte
+
+Preparación Corn Dog:
+• Secar bien las salchichas con papel de cocina
+• Ensartar las salchichas desde una punta hasta casi la otra punta sin que sobresalga el pincho
+• Calentar el aceite a temperatura medio alto (350ºF – 180ºC) a una profundidad que cubra totalmente las salchichas y en una cacerola o sartén que quepan las salchichas y el pincho a t
+• Cubrir con harina la salchicha y quitar exceso
+• Llenar un vaso alto y estrecho con la masa e insertar la salchicha hasta que quede totalmente recubierta de masa.
+• Freír en el aceite ya caliente de dos en dos hasta que queden dorados por fuera y hechos por dentro – entre 4 a 6 minutos . Girar cuidadosamente para que se dore por los dos lados.
+• Retirar del fuego y colocar sobre papel de cocina.
+• Servir caliente con kétchup y mostaza como condimento.', 2, 2, 8, 45, N'/img/CORN_DOGS.jpg', N'https://www.youtube.com/embed/WVvvGsGHk_U', CAST(0x0000A55E0151D460 AS DateTime))
+GO
+INSERT [RECETA] ([RECE_ID], [RECE_NOMB], [RECE_INGR], [RECE_DESC], [RECE_TIPO_ID], [RECE_DIFI_ID], [RECE_PORC], [RECE_TIEM], [RECE_FOTO], [RECE_VIDE], [RECE_FECH_ALTA]) VALUES (8, N'Frost de fresa', N'Ingredientes:
+• 1/2 taza – 115 gr de mantequilla temperatura ambiente
+• 1 taza 225 gr de queso crema, temperatura ambiente
+• De 2 a 3 tazas o 250 a 375 gr de azúcar glas dependiendo de gustos***- nosotros hemos usado 250 gr o 2 tazas
+• 1/4 a 1/3 taza – mermelada de fresa ***
+• 1/2 cucharadita extracto de vainilla
+• Opcional: Colorante alimentario rojo
+***Depende si lo vais a usar para decorar con boquilla o no, elegir la mermelada o si tiene trozos grandes de fruta machacar bien para que no queden trozos grandes', N'Preparación:
+• Batir la mantequilla y el queso crema (y 2 gotas de colorante opcional) en un bol con una batidora eléctrica hasta que quede cremoso y suave.
+• Agregar el azúcar glas en 2 partes con la batidora hasta que esté suave y cremoso;
+• Añadir la mermelada de fresa y el extracto de vainilla y batir hasta que quede integrado.', 7, 1, 6, 20, N'/img/FROST_FRESA.jpg', N'https://www.youtube.com/embed/KZCWfqdrqVU', CAST(0x0000A5C3013FFA10 AS DateTime))
+GO
