@@ -16,6 +16,7 @@ public partial class Principal : System.Web.UI.Page
             ViewState["Columna"] = "RECE_NOMB";
             ViewState["Orden"] = "ASC";
             CargarSlider();
+
             if (!IsPostBack)
             {
                 CargarTipo();
@@ -80,7 +81,7 @@ public partial class Principal : System.Web.UI.Page
             literal.Text += "                <label>" + ent.Tipo.Nombre + "</label>";
             literal.Text += "            </div>";
             literal.Text += "        </div>";
-            literal.Text += "        <div class=\"col-xs-4\">";
+            literal.Text += "        <div class=\"col-xs4\">";
             literal.Text += "            <div class=\"text-left\">";
             literal.Text += "                <label>" + ent.Tiempo + "</label>";
             literal.Text += "            </div>";
@@ -178,4 +179,5 @@ public partial class Principal : System.Web.UI.Page
             MostrarMensaje(ex.Message);
         }
     }
+
 }

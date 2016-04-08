@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MaestraRecetario.master" AutoEventWireup="true"
     CodeFile="Principal.aspx.cs" Inherits="Principal" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="css/ekko-lightbox.min.css" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap-datepicker.css" rel="stylesheet" type="text/css" />
@@ -9,7 +9,7 @@
     <link href="css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap-datepicker3.standalone.css" rel="stylesheet" type="text/css" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="container">
         <div class="row">
@@ -17,10 +17,10 @@
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
                     </ContentTemplate>
-                           <Triggers>
+                    <%-- <Triggers>
                         <asp:PostBackTrigger />
                         <asp:AsyncPostBackTrigger ControlID="btnBuscar" EventName="Click" />
-                    </Triggers>
+                    </Triggers>--%>
                 </asp:UpdatePanel>
                 <asp:UpdateProgress ID="UpdateProgress1" runat="server">
                     <ProgressTemplate>
@@ -35,29 +35,44 @@
     <div class="container">
         <div class="panel panel-primary" style="border-color: black">
             <div class="panel-body" style="background-color: black">
-                <div class="row">
-                    <div>
-                        <h2 class="text-center">
-                            <label class="label label-primary" style="background-color: Maroon">
-                                Últimas recetas</label>
-                        </h2>
-                        <br />
-                        <div id="CarouselUno" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <asp:PlaceHolder runat="server" ID="phSliderUno" />
-                            </ol>
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" role="listbox">
-                                <asp:PlaceHolder runat="server" ID="phFotoUno" />
-                            </div>
-                            <!-- Left and right controls -->
-                            <a class="left carousel-control" href="#CarouselUno" role="button" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Anterior</span> </a><a class="right carousel-control" href="#CarouselUno" role="button"
-                                    data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Siguiente</span> </a>
-                        </div>
+                <div id="CarouselUno" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <asp:PlaceHolder runat="server" ID="phSliderUno" />
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <asp:PlaceHolder runat="server" ID="phFotoUno" />
                     </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#CarouselUno" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#CarouselUno" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
+                <%--<h2 class="text-center">
+                    <label class="label label-primary" style="background-color: Maroon">
+                        Últimas recetas</label>
+                </h2>
+                <br />
+                <div id="CarouselUno" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <asp:PlaceHolder runat="server" ID="phSliderUno" />
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <asp:PlaceHolder runat="server" ID="phFotoUno" />
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#CarouselUno" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Anterior</span> </a><a class="right carousel-control" href="#CarouselUno" role="button"
+                            data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Siguiente</span> </a>
+                </div>--%>
             </div>
         </div>
     </div>
@@ -79,14 +94,14 @@
                                     <br />
                                     <div class="input-group" id="addon1">
                                         <span class="input-group-addon">Nombre:</span>
-                                        <asp:TextBox runat="server" ID="txtNombre" class="form-control" aria-describedby="addon1" />
+                                        <asp:TextBox runat="server" ID="txtNombre" class="form-contol" aria-describedby="addon1" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <br />
                                     <div class="input-group" id="addon2">
                                         <span class="input-group-addon">Tipo:</span>
-                                        <asp:DropDownList runat="server" ID="ddlTipo" class="form-control" aria-describedby="addon2"
+                                        <asp:DropDownList runat="server" ID="ddlTipo" class="form-contol" aria-describedby="addon2"
                                             AppendDataBoundItems="true">
                                             <asp:ListItem Text="[Selecciona uno]" Value="0" />
                                         </asp:DropDownList>
@@ -150,7 +165,7 @@
             $('#btnMostrar').on("click", function () {
                 if (contador % 2 == 0) {
                     $('#btnMostrar').addClass("glyphicon-chevron-up").removeClass("glyphicon-chevron-down");
-                    $('#btnMostrar').html(" Ocultar");
+                    $('#btnMostrar').html("Ocultar");
                     $('#demo').slideToggle(1000);
                     contador++;
                 } else {

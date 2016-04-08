@@ -11,7 +11,7 @@ namespace Gabo.Recetario.Data
         public SqlConnection con;
         public DatAbstracta()
         {
-            con = new SqlConnection("Data Source = CASALAP; User Id=sa; Password=12345; Initial Catalog = Recetario;");
+            con = new SqlConnection("Data Source = LEONEL\\MSSQLSERVER2012; User Id=sa; Password=12345; Initial Catalog = RECETARIO;");
         }
     }
 }

@@ -17,25 +17,25 @@ public class wsRecetario : System.Web.Services.WebService
     {
         return "Hola a todos";
     }
-    [WebMethod]
-    public ResReceta Obtener()
-    {
-        ResReceta receta = new ResReceta();
-        try
-        {
-            receta.Recetas = new BusReceta().ObtenerRecetas();
-            receta.EsError = false;
-            return receta;
-        }
-        catch (Exception ex)
-        {
-            receta.EsError = true;
-            receta.MensajeError = ex.Message;
-            return receta;
-        }
-    }
+    //[WebMethod]
+    //public ResReceta Obtener()
+    //{
+    //    ResReceta receta = new ResReceta();
+    //    try
+    //    {
+    //      receta.Recetas = new BusReceta().ObtenerRecetas();
+    //        receta.EsError = false;
+    //        return receta;
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        receta.EsError = true;
+    //        receta.MensajeError = ex.Message;
+    //        return receta;
+    //    }
+    //}
 
-    [WebMethod]
+    //[WebMethod]
 
     public EntReceta ObtenerRecetaID(int id)
     {

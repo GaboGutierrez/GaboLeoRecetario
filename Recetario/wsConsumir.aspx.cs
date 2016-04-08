@@ -12,8 +12,8 @@ public partial class wsConsumir : System.Web.UI.Page
     {
         try
         {
-            GridView1.DataSource = new wsRecetario().ObtenerRecetas();
-            GridView1.DataBind();
+            //GridView1.DataSource = new wsRecetario().ObtenerRecetas();
+            //GridView1.DataBind();
         }
         catch (Exception ex)
         {

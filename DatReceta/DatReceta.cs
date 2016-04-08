@@ -90,7 +90,7 @@ namespace Gabo.Recetario.Data
             com.Parameters.Add(new SqlParameter() { ParameterName = "@TipoId", Value = tipoId, SqlDbType = SqlDbType.Int });
             com.Parameters.Add(new SqlParameter() { ParameterName = "@Ingredientes", Value = ingredientes, SqlDbType = SqlDbType.NVarChar });
             com.Parameters.Add(new SqlParameter() { ParameterName = "@Elaboracion", Value = elaboracion, SqlDbType = SqlDbType.NVarChar });
-            com.Parameters.Add(new SqlParameter() { ParameterName = "@Tiempo", Value = tiempo, SqlDbType = SqlDbType.Int });
+            com.Parameters.Add(new SqlParameter() { ParameterName = "@Timpo", Value = tiempo, SqlDbType = SqlDbType.Int });
             com.Parameters.Add(new SqlParameter() { ParameterName = "@Porciones", Value = porciones, SqlDbType = SqlDbType.Int });
             com.Parameters.Add(new SqlParameter() { ParameterName = "@FechaAlta", Value = fechaAlta, SqlDbType = SqlDbType.NVarChar });
             com.Parameters.Add(new SqlParameter() { ParameterName = "@DificultadId", Value = dificultadId, SqlDbType = SqlDbType.Int });

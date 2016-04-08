@@ -46,8 +46,8 @@ namespace Gabo.Recetario.Business
                 EntReceta ent = new EntReceta();
                 ent.Id = Convert.ToInt32(dr["RECE_ID"]);
                 ent.Nombre = dr["RECE_NOMB"].ToString();
-                ent.Ingredientes = dr["RECE_INGR"].ToString();
-                ent.Descripcion = dr["RECE_DESC"].ToString();
+                ent.Ingredientes = dr["RECEINGR"].ToString();
+                ent.Descripcion = dr["RECEDESC"].ToString();
                 ent.Tipo.Nombre = dr["TIPO_NOMB"].ToString();
                 ent.Dificultad.Nombre = dr["DIFI_NOMB"].ToString();
                 ent.Porciones = Convert.ToInt32(dr["RECE_PORC"]);
