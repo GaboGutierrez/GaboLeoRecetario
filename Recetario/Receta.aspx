@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MaestraRecetario.master" AutoEventWireup="true"
     CodeFile="Receta.aspx.cs" Inherits="Receta" %>
 
+<%@ Register Src="~/wucGabo.ascx" TagPrefix="uc1" TagName="wucGabo" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="css/ekko-lightbox.min.css" rel="stylesheet" type="text/css" />
@@ -81,12 +84,13 @@
                 </div>--%>
                 <div class="panel-footer text-center" style="background-color: #591707; border: 0">
                     <a href="Principal.aspx">
-                        <label class="btn btn-info">
+                        <label class="btn btn-info">.
                             Regresar</label></a>
                 </div>
             </div>
         </div>
     </div>
+    
     <script src="js/jquery-2.1.4.js" type="text/javascript"></script>
     <script src="js/jquery-ui.js" type="text/javascript"></script>
     <script src="js/bootstrap.js" type="text/javascript"></script>

@@ -152,6 +152,14 @@
             </Columns>
         </asp:GridView>
     </div>
+    <div>
+        <asp:Button CssClass="btn btn-default" Text="Reporte" runat="server" ID="btnReporte" OnClick="btnReporte_Click" />
+        <br />
+        <asp:Button CssClass="btn btn-success" Text="Reporte Agrupado" runat="server" ID="btnReporteAgrupado" OnClick="btnReporteAgrupado_Click" />
+        <br />
+        <asp:Button CssClass="btn btn-primary" Text="Reporte Filtrado" runat="server" OnClick="Unnamed1_Click" />
+
+    </div>
     <script src="js/jquery-2.1.4.js" type="text/javascript"></script>
     <script src="js/jquery-ui.js" type="text/javascript"></script>
     <script src="js/bootstrap.js" type="text/javascript"></script>

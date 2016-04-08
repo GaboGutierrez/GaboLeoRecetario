@@ -12,21 +12,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="ObtenerRecetas">
-        <s:complexType />
-      </s:element>
-      <s:element name="ObtenerRecetasResponse">
+      <s:element name="ObtenerRecetaID">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ObtenerRecetasResult" type="tns:ArrayOfEntReceta" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfEntReceta">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="EntReceta" nillable="true" type="tns:EntReceta" />
-        </s:sequence>
-      </s:complexType>
+      <s:element name="ObtenerRecetaIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerRecetaIDResult" type="tns:EntReceta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:complexType name="EntReceta">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
@@ -56,20 +55,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:element name="ObtenerRecetaID">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ObtenerRecetaIDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ObtenerRecetaIDResult" type="tns:EntReceta" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="EntReceta" nillable="true" type="tns:EntReceta" />
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -78,45 +65,66 @@
   <wsdl:message name="HelloWorldSoapOut">
     <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
   </wsdl:message>
-  <wsdl:message name="ObtenerRecetasSoapIn">
-    <wsdl:part name="parameters" element="tns:ObtenerRecetas" />
-  </wsdl:message>
-  <wsdl:message name="ObtenerRecetasSoapOut">
-    <wsdl:part name="parameters" element="tns:ObtenerRecetasResponse" />
-  </wsdl:message>
   <wsdl:message name="ObtenerRecetaIDSoapIn">
     <wsdl:part name="parameters" element="tns:ObtenerRecetaID" />
   </wsdl:message>
   <wsdl:message name="ObtenerRecetaIDSoapOut">
     <wsdl:part name="parameters" element="tns:ObtenerRecetaIDResponse" />
   </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecetaIDHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecetaIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:EntReceta" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecetaIDHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecetaIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:EntReceta" />
+  </wsdl:message>
   <wsdl:portType name="wsRecetarioSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ObtenerRecetas">
-      <wsdl:input message="tns:ObtenerRecetasSoapIn" />
-      <wsdl:output message="tns:ObtenerRecetasSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerRecetaID">
       <wsdl:input message="tns:ObtenerRecetaIDSoapIn" />
       <wsdl:output message="tns:ObtenerRecetaIDSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
+  <wsdl:portType name="wsRecetarioHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecetaID">
+      <wsdl:input message="tns:ObtenerRecetaIDHttpGetIn" />
+      <wsdl:output message="tns:ObtenerRecetaIDHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="wsRecetarioHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecetaID">
+      <wsdl:input message="tns:ObtenerRecetaIDHttpPostIn" />
+      <wsdl:output message="tns:ObtenerRecetaIDHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
   <wsdl:binding name="wsRecetarioSoap" type="tns:wsRecetarioSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="HelloWorld">
       <soap:operation soapAction="http://miPrimerWebService.aweb.com/HelloWorld" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ObtenerRecetas">
-      <soap:operation soapAction="http://miPrimerWebService.aweb.com/ObtenerRecetas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -145,15 +153,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ObtenerRecetas">
-      <soap12:operation soapAction="http://miPrimerWebService.aweb.com/ObtenerRecetas" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="ObtenerRecetaID">
       <soap12:operation soapAction="http://miPrimerWebService.aweb.com/ObtenerRecetaID" style="document" />
       <wsdl:input>
@@ -164,12 +163,60 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="wsRecetarioHttpGet" type="tns:wsRecetarioHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecetaID">
+      <http:operation location="/ObtenerRecetaID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsRecetarioHttpPost" type="tns:wsRecetarioHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecetaID">
+      <http:operation location="/ObtenerRecetaID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="wsRecetario">
     <wsdl:port name="wsRecetarioSoap" binding="tns:wsRecetarioSoap">
       <soap:address location="http://localhost:1193/wsRecetario.asmx" />
     </wsdl:port>
     <wsdl:port name="wsRecetarioSoap12" binding="tns:wsRecetarioSoap12">
       <soap12:address location="http://localhost:1193/wsRecetario.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsRecetarioHttpGet" binding="tns:wsRecetarioHttpGet">
+      <http:address location="http://localhost:1193/wsRecetario.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsRecetarioHttpPost" binding="tns:wsRecetarioHttpPost">
+      <http:address location="http://localhost:1193/wsRecetario.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
