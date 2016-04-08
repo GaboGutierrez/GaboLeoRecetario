@@ -14,14 +14,19 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-6">
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+               <%-- <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
                     </ContentTemplate>
                     <%-- <Triggers>
                         <asp:PostBackTrigger />
                         <asp:AsyncPostBackTrigger ControlID="btnBuscar" EventName="Click" />
+<<<<<<< HEAD
                     </Triggers>--%>
                 </asp:UpdatePanel>
+=======
+                    </Triggers>
+                </asp:UpdatePanel>--%>
+>>>>>>> origin/master
                 <asp:UpdateProgress ID="UpdateProgress1" runat="server">
                     <ProgressTemplate>
                         <asp:Image ImageUrl="~/img/cargando.gif" runat="server" ImageAlign="AbsMiddle" />

@@ -23,7 +23,11 @@ public class wsRecetario : System.Web.Services.WebService
     //    ResReceta receta = new ResReceta();
     //    try
     //    {
+<<<<<<< HEAD
     //      receta.Recetas = new BusReceta().ObtenerRecetas();
+=======
+    //        receta.Recetas = new BusReceta().ObtenerRecetas();
+>>>>>>> origin/master
     //        receta.EsError = false;
     //        return receta;
     //    }

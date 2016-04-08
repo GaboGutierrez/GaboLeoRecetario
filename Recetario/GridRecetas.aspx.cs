@@ -140,4 +140,16 @@ public partial class GridRecetas : System.Web.UI.Page
             MostrarMensaje(ex.Message);
         }
     }
+    protected void btnReporte_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ReporteCristal.aspx");
+    }
+    protected void btnReporteAgrupado_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ReporteAgrupado.aspx");
+    }
+    protected void Unnamed1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ReporteFiltrado.aspx");
+    }
 }
